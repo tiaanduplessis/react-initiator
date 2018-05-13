@@ -23,7 +23,7 @@ $ yarn start
 - [Intermediate caching](https://github.com/mzgoddard/hard-source-webpack-plugin) of modules.
 - [Flow](https://flow.org/) static type checking.
 - Testing using [Jest](https://facebook.github.io/jest/).
-- [PostCSS](https://postcss.org/) processing of CSS with [cssnext](cssnext), (autoprefixer)[https://github.com/postcss/autoprefixer] and [inlining `@import` rules](https://github.com/postcss/postcss-import).
+- [PostCSS](https://postcss.org/) processing of CSS with [cssnext](cssnext), [autoprefixer](https://github.com/postcss/autoprefixer) and [inlining `@import` rules](https://github.com/postcss/postcss-import).
 - Git hooks using [husky](https://github.com/typicode/husky).
 
 ## Scripts
