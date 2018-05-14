@@ -56,6 +56,7 @@ module.exports = {
               ident: "postcss",
               plugins: loader => [
                 require("postcss-import")({ root: loader.resourcePath }),
+                require('postcss-flexbugs-fixes'),
                 require("postcss-cssnext")()
               ]
             }
