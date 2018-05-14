@@ -11,7 +11,7 @@
     "test": "jest --env=jsdom",
     "flow": "flow",
     "lint": "eslint --fix ./**/*.js",
-    "prepush": "yarn {lint,flow,test}"
+    "prepush": "yarn lint; yarn flow; yarn test"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.46",
