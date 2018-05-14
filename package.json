@@ -8,17 +8,17 @@
     "coverage": "jest --coverage",
     "build": "NODE_ENV=production webpack --mode production --progress",
     "serve": "serve dist",
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "flow": "flow",
     "lint": "eslint --fix ./**/*.js",
     "prepush": "yarn {lint,flow,test}"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
+    "@babel/core": "7.0.0-beta.46",
     "@babel/preset-env": "7.0.0-beta.46",
     "@babel/preset-flow": "7.0.0-beta.46",
     "@babel/preset-react": "7.0.0-beta.46",
-    "babel-core": "7.0.0-0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
     "babel-jest": "22.4.3",
     "babel-loader": "8.0.0-beta.2",
@@ -44,6 +44,7 @@
     "mini-css-extract-plugin": "0.4.0",
     "optimize-css-assets-webpack-plugin": "4.0.1",
     "postcss-cssnext": "3.1.0",
+    "postcss-flexbugs-fixes": "3.3.1",
     "postcss-import": "11.1.0",
     "postcss-loader": "2.1.5",
     "purify-css": "1.2.5",
@@ -66,5 +67,36 @@
   },
   "browserslist": [
     "> 1%"
-  ]
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/jest/setup.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/css-transform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/file-transform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node",
+      "mjs"
+    ]
+  }
 }
