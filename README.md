@@ -7,7 +7,7 @@
 This seed assumes you are using [yarn](https://yarnpkg.com/en/) as your package manager.
 
 ```sh
-$ git clone --depth=0 https://github.com/tiaanduplessis/react-initiator.git newProject
+$ git clone --depth=1 https://github.com/tiaanduplessis/react-initiator.git newProject
 $ cd newProject
 $ yarn
 $ yarn start
