@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import logo from './assets/logo.svg';
 import './App.css';
 
-// declare var IN_DEV: boolean
+declare var IN_DEV: boolean
 
 const App = () => (
   <div className="app">
@@ -30,4 +30,6 @@ const root = document.getElementById('app');
 if (root) {
   render(<App />, root);
 }
+
+export default App;
 
