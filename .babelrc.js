@@ -1,6 +1,8 @@
-{
+const IS_TEST = String(process.env.NODE_ENV) === 'test'
+
+module.exports = {
   "presets": [["@babel/preset-env", {
-    "modules": false,
+    modules: IS_TEST ? 'commonjs' : false,
     "targets": {
       "browsers": ["> 1%"]
     }
