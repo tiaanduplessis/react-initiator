@@ -4,7 +4,7 @@
     "airbnb",
     "plugin:flowtype/recommended"
   ],
-  "plugins": ["compat", "flowtype"],
+  "plugins": ["compat", "flowtype", "jest"],
   "globals": {
     "IN_DEV": true,
     "VERSION": true
