@@ -7,6 +7,7 @@ const StyleLintPlugin = require("stylelint-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const PurifyCSSPlugin = require("purifycss-webpack");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
@@ -72,7 +73,6 @@ module.exports = {
           fix: true
         }
       },
-
       {
         test: /\.js|\/.jsx$/,
         exclude: /node_modules/,
@@ -106,7 +106,7 @@ module.exports = {
 
 function addEnvPlugins(basePlugins = []) {
   if (IN_DEV) {
-    return [new DashboardPlugin(), ...basePlugins];
+    return [new DashboardPlugin(), new ErrorOverlayPlugin(), ...basePlugins];
   }
 
   return [
