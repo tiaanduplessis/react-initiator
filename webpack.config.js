@@ -44,6 +44,9 @@ const plugins = addEnvPlugins(basePlugins);
 
 module.exports = {
   entry: "./src/App.jsx",
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
